@@ -32,9 +32,9 @@ class ResNet34(nn.Module):
         super(ResNet34,self).__init__()
         self.l0 = nn.Sequential(
                 nn.Conv2d(inchannels, 64, kernel_size=7, stride=2, padding=3),
-                nn.MaxPool2d(kernel_size=3,stride=2,padding=1),
                 nn.BatchNorm2d(64),
-                nn.ReLU()
+                nn.ReLU(),
+                nn.MaxPool2d(kernel_size=3,stride=2,padding=1),
             )
         self.l1 = nn.Sequential(
             resblock(64,64,64,False),
