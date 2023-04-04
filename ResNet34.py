@@ -65,8 +65,6 @@ class ResNet34(nn.Module):
              nn.Flatten(), 
              nn.Linear(512,numclasses)
         )
-        self.avgpool = nn.AdaptiveAvgPool2d(1)
-        self.fc = nn.Linear(512,1000)
     def forward(self,x):
         x = self.l0(x)
         x = self.l1(x)
